@@ -20,7 +20,8 @@ const listView = () => {
         endReached : false,
         refreshing : false,
         noMoreLoader : false,
-        networkError : false
+        networkError : false,
+        excep : false
     })
 
     useEffect(()=>{
@@ -41,10 +42,12 @@ const listView = () => {
             }
         },
         error=>{
-            setBools({noMoreLoader:true, networkError : true})
+            setBools({noMoreLoader:true, err : true})
+            console.log('Error')
         },
         exception => {
             setBools({noMoreLoader:true, networkError : true})
+            console.log('Exception')
         }
         )
         )
@@ -70,10 +73,14 @@ const listView = () => {
                 ?<View style={styles.activityIndicatorView}>
                     <ActivityIndicator animating size="large"/>
                 </View>
-                : (load && bools.noMoreLoader && bools.networkError)
-                ? <View style={styles.activityIndicatorView}>
-                    <Text style={globalStyles.headingStyleShadow16}>{stringConstants.pleaseconnecttoInternet}</Text>
-                </View>
+                : (load && bools.noMoreLoader && (bools.networkError || bools.err))
+                ?  (bools.err
+                    ?<View style={styles.activityIndicatorView}>
+                        <Text style={globalStyles.headingStyleShadow16}>{stringConstants.sorry}</Text>
+                     </View> 
+                    :<View style={styles.activityIndicatorView}>
+                        <Text style={globalStyles.headingStyleShadow16}>{stringConstants.pleaseconnecttoInternet}</Text>
+                     </View>)
                 :<FlatList
                 data = {posts}
                 renderItem={({item})=>(
@@ -99,7 +106,6 @@ const listView = () => {
                 onEndReachedThreshold={0.3}
                 onRefresh={()=>pullToRefresh()}
                 refreshing={bools.refreshing}
-
             />
             }
 

@@ -69,6 +69,7 @@ exceptionCallBack,
         if(exceptionCallBack){
             exceptionCallBack(ex)
         }
+        return ex
     })
 }
 
