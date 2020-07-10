@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { navigationConstants } from '../utils/constants/navigationConstants'
-import { fetchPosts } from '../network'
-import { useDispatch } from 'react-redux';
-import { show_loader } from './../redux/action/action';
+import { globalStyles } from './../utils/globalStyles';
+import { stringConstants } from './../utils/constants/stringConstants';
 
 const welcomePage = (props) => {
-
-    const dispatch = useDispatch()
-
-    useEffect(()=>{
-        
-    },[])
-
     return (
-        <View>
+        <View style={[globalStyles.body,styles.welcomeBody]}>
             <TouchableOpacity
+                style={globalStyles.buttonStyle}
                 onPress={()=>props.navigation.navigate(navigationConstants.listView)}>
-                <Text>
-                    Go to list
+                <Text style = {globalStyles.buttonText}>
+                    {stringConstants.gotolist}
                 </Text>
             </TouchableOpacity>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    welcomeBody : {
+        justifyContent:'center'
+    }
+})
 
 export default welcomePage

@@ -4,9 +4,9 @@ import { hide_loader } from "../redux/action/action";
 export const showHideLoader = (bool, dispatch) => {
     if(bool)
     {
-        dispatch(show_loader)
+        dispatch(show_loader())
     }
     else{
-        dispatch(hide_loader)
+        dispatch(hide_loader())
     }
 }

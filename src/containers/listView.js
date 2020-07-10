@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native'
+import { View, Text, TouchableOpacity, FlatList, ActivityIndicator, StyleSheet } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux';
-import { show_loader, hide_loader } from '../redux/action/action';
 import { fetchPosts } from '../network';
+import { globalStyles } from './../utils/globalStyles';
+import { stringConstants } from './../utils/constants/stringConstants';
+import ListItemUI from '../components/listItemUI';
 
 const listView = () => {
     const load = useSelector(state => state.loader)
@@ -16,7 +18,9 @@ const listView = () => {
         listLoading : false,
         bottomLoad : false,
         endReached : false,
-        refreshing : false
+        refreshing : false,
+        noMoreLoader : false,
+        networkError : false
     })
 
     useEffect(()=>{
@@ -24,29 +28,25 @@ const listView = () => {
     },[])
 
     const fetchData = () => {
-        setBools({...bools, bottomLoad : true}),
+        
         dispatch(fetchPosts(startEnd.start,startEnd.end,response=>{
-            console.log('Response Generated')
-            console.log(response.data)
-            var x=5
-            if(x==5){
-                console.log("yee")
-            }
-            else{
-                console.log('Noooooooo')
-            }
             if(Object.keys(posts).length == Object.keys(response.data).length)
             {   
-                console.log('CHanging Bool')
                 setBools({...bools, bottomLoad : false, endReached : true})
             }
             else {
-                console.log('CHanging Bool')
                 setPosts(response.data)
                 setStartEnd(prevState =>({...prevState, end : prevState.end+10}))
-                setBools({...bools, bottomLoad : false, refreshing : false})
+                setBools({...bools, bottomLoad : false, refreshing : false, noMoreLoader : true, networkError : false})
             }
-        })
+        },
+        error=>{
+            setBools({noMoreLoader:true, networkError : true})
+        },
+        exception => {
+            setBools({noMoreLoader:true, networkError : true})
+        }
+        )
         )
     }
 
@@ -56,42 +56,45 @@ const listView = () => {
     }
 
     const bottomPull = () => {
-        bools.endReached ? null : fetchData()
+        bools.endReached ? null : (setBools({...bools, bottomLoad : true}),fetchData())
     }
 
     return (
-        <View style={{backgroundColor:'red',padding:40}}>
-            <Text>
-                LIST VIEW
+        <View style={globalStyles.body}>
+            <Text style = {globalStyles.headingStyleBold18}>
+                {stringConstants.postomania}
             </Text>
+            
             {
-                load
-                ?<ActivityIndicator animating size="large"/>
-                :
-                <FlatList
+                (load && !bools.noMoreLoader)
+                ?<View style={styles.activityIndicatorView}>
+                    <ActivityIndicator animating size="large"/>
+                </View>
+                : (load && bools.noMoreLoader && bools.networkError)
+                ? <View style={styles.activityIndicatorView}>
+                    <Text style={globalStyles.headingStyleShadow16}>{stringConstants.pleaseconnecttoInternet}</Text>
+                </View>
+                :<FlatList
                 data = {posts}
                 renderItem={({item})=>(
-                    <View style={{paddingVertical:10}}>
-                        <Text>{item.title}</Text>
-                    </View>
+                    <ListItemUI item = {item}/>
                 )}
                 extraData = {posts}
-                // numColumns
                 showsVerticalScrollIndicator={false}
                 keyExtractor = {item => `${item.id}`}
-                ItemSeparatorComponent={() => <View style={{height:2,backgroundColor:'black',marginVertical:5}}></View>}
-                ListEmptyComponent = {()=><View><TouchableOpacity onPress={console.log("POSTS"),console.log(bools.bottomLoad)}>
-                        <Text>Nothing Available</Text>
-                    </TouchableOpacity></View>}
+                ListHeaderComponent = {()=> <View>
+                    <Text style={globalStyles.headingStyleShadow16}>{stringConstants.herewego}</Text>
+                </View>}
+                ItemSeparatorComponent={() => <View style={styles.itemSeparator}></View>}
+                ListEmptyComponent = {()=><View style={styles.nopostView}><TouchableOpacity>
+                                        <Text style={globalStyles.textMedium15shadow}>{stringConstants.noposts}</Text>
+                                    </TouchableOpacity></View>}
 
                 ListFooterComponent = { bools.bottomLoad
-                                        ?<ActivityIndicator animating size="large"/>
-                                        :<View style={{paddingVertical:20,bottom:100}}>
-                                            <Text style={{alignSelf:'center'}}>Fetch more of list</Text>
+                                        ?<View><ActivityIndicator animating size="large"/></View>
+                                        :<View style={styles.endList}>
+                                            <Text style={[globalStyles.headingStyleShadow16,{alignSelf:'center'}]}>{stringConstants.endofList}</Text>
                                         </View>}
-                ListHeaderComponent = {()=> <View>
-                                        <Text style={{textAlign:'center'}}>Start Of List</Text>
-                                    </View>}
                 onEndReached = {bools.bottomLoad ? null : ()=>bottomPull()}
                 onEndReachedThreshold={0.3}
                 onRefresh={()=>pullToRefresh()}
@@ -103,5 +106,26 @@ const listView = () => {
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    itemSeparator : {
+        height:0.5,
+        opacity:0.3,
+        backgroundColor:'black',
+        marginVertical:5
+    },
+    activityIndicatorView:{
+        height:'100%',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    nopostView:{
+        height:'100%',
+        justifyContent:'center'
+    },
+    endList:{
+        paddingVertical:20
+    }
+})
 
 export default listView

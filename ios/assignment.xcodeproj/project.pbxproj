@@ -18,6 +18,13 @@
 		2DCD954D1E0B4F2C00145EB5 /* assignmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* assignmentTests.m */; };
 		4ADAC9CA1C894A64A8B810A0 /* Caveat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5008030A9092408199972F0C /* Caveat-Bold.ttf */; };
 		87ABCEB2AC3247E688D1E9AF /* Caveat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73A00F20E78E48648C858B59 /* Caveat-Regular.ttf */; };
+		B0177984C55B4EDDB74A5B38 /* NotoSansJP-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = CF2CD0B5C2A7454795F8A596 /* NotoSansJP-Black.otf */; };
+		E554FD5D2CE34151894ED4C6 /* NotoSansJP-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7709FAD829624ABA80D23C94 /* NotoSansJP-Bold.otf */; };
+		783270F3BF3442E5B2EA85AD /* NotoSansJP-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 187EF158DE0B4F97BFF64742 /* NotoSansJP-Light.otf */; };
+		717B0C7078B943C5A5D3BB86 /* NotoSansJP-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 850480FB7F0046168DA97FB9 /* NotoSansJP-Medium.otf */; };
+		09780D212E184F78858BF50E /* NotoSansJP-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 73AA9F9BC49A4278BDDD610A /* NotoSansJP-Regular.otf */; };
+		A9CE9B5581E44D7FAD1060E6 /* NotoSansJP-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 79CA98FF1A0F48B1AB57CE64 /* NotoSansJP-Thin.otf */; };
+		7E3290C6ADC24996B24EB14B /* ShadowsIntoLight-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 238C578CA18B4CF3B3BFD559 /* ShadowsIntoLight-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +62,13 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		5008030A9092408199972F0C /* Caveat-Bold.ttf */ = {isa = PBXFileReference; name = "Caveat-Bold.ttf"; path = "../src/assets/fonts/Caveat-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		73A00F20E78E48648C858B59 /* Caveat-Regular.ttf */ = {isa = PBXFileReference; name = "Caveat-Regular.ttf"; path = "../src/assets/fonts/Caveat-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CF2CD0B5C2A7454795F8A596 /* NotoSansJP-Black.otf */ = {isa = PBXFileReference; name = "NotoSansJP-Black.otf"; path = "../src/assets/fonts/NotoSansJP-Black.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7709FAD829624ABA80D23C94 /* NotoSansJP-Bold.otf */ = {isa = PBXFileReference; name = "NotoSansJP-Bold.otf"; path = "../src/assets/fonts/NotoSansJP-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		187EF158DE0B4F97BFF64742 /* NotoSansJP-Light.otf */ = {isa = PBXFileReference; name = "NotoSansJP-Light.otf"; path = "../src/assets/fonts/NotoSansJP-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		850480FB7F0046168DA97FB9 /* NotoSansJP-Medium.otf */ = {isa = PBXFileReference; name = "NotoSansJP-Medium.otf"; path = "../src/assets/fonts/NotoSansJP-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		73AA9F9BC49A4278BDDD610A /* NotoSansJP-Regular.otf */ = {isa = PBXFileReference; name = "NotoSansJP-Regular.otf"; path = "../src/assets/fonts/NotoSansJP-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		79CA98FF1A0F48B1AB57CE64 /* NotoSansJP-Thin.otf */ = {isa = PBXFileReference; name = "NotoSansJP-Thin.otf"; path = "../src/assets/fonts/NotoSansJP-Thin.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		238C578CA18B4CF3B3BFD559 /* ShadowsIntoLight-Regular.ttf */ = {isa = PBXFileReference; name = "ShadowsIntoLight-Regular.ttf"; path = "../src/assets/fonts/ShadowsIntoLight-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +181,13 @@
 			children = (
 				5008030A9092408199972F0C /* Caveat-Bold.ttf */,
 				73A00F20E78E48648C858B59 /* Caveat-Regular.ttf */,
+				CF2CD0B5C2A7454795F8A596 /* NotoSansJP-Black.otf */,
+				7709FAD829624ABA80D23C94 /* NotoSansJP-Bold.otf */,
+				187EF158DE0B4F97BFF64742 /* NotoSansJP-Light.otf */,
+				850480FB7F0046168DA97FB9 /* NotoSansJP-Medium.otf */,
+				73AA9F9BC49A4278BDDD610A /* NotoSansJP-Regular.otf */,
+				79CA98FF1A0F48B1AB57CE64 /* NotoSansJP-Thin.otf */,
+				238C578CA18B4CF3B3BFD559 /* ShadowsIntoLight-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -312,6 +333,13 @@
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				4ADAC9CA1C894A64A8B810A0 /* Caveat-Bold.ttf in Resources */,
 				87ABCEB2AC3247E688D1E9AF /* Caveat-Regular.ttf in Resources */,
+				B0177984C55B4EDDB74A5B38 /* NotoSansJP-Black.otf in Resources */,
+				E554FD5D2CE34151894ED4C6 /* NotoSansJP-Bold.otf in Resources */,
+				783270F3BF3442E5B2EA85AD /* NotoSansJP-Light.otf in Resources */,
+				717B0C7078B943C5A5D3BB86 /* NotoSansJP-Medium.otf in Resources */,
+				09780D212E184F78858BF50E /* NotoSansJP-Regular.otf in Resources */,
+				A9CE9B5581E44D7FAD1060E6 /* NotoSansJP-Thin.otf in Resources */,
+				7E3290C6ADC24996B24EB14B /* ShadowsIntoLight-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

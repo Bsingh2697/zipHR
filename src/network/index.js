@@ -4,7 +4,7 @@ import { endpoints } from './../utils/constants/endpoints';
 import { apiConstants } from './../utils/constants/apiConstants';
 import { showHideLoader } from '../utils/globalFunctions';
 
-const TIMEOUT_DURATION  = 60000;
+const TIMEOUT_DURATION  = 15000;
 
 export const defaultInstance = axios.create({
     baseURL : endpoints.baseUrl,

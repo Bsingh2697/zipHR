@@ -57,6 +57,13 @@
 	<array>
 		<string>Caveat-Bold.ttf</string>
 		<string>Caveat-Regular.ttf</string>
+		<string>NotoSansJP-Black.otf</string>
+		<string>NotoSansJP-Bold.otf</string>
+		<string>NotoSansJP-Light.otf</string>
+		<string>NotoSansJP-Medium.otf</string>
+		<string>NotoSansJP-Regular.otf</string>
+		<string>NotoSansJP-Thin.otf</string>
+		<string>ShadowsIntoLight-Regular.ttf</string>
 	</array>
 </dict>
 </plist>
