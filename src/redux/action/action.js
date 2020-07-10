@@ -7,6 +7,7 @@ export const show_loader = () => {
 }
 
 export const hide_loader = () => {
+    console.log("CALLED HIDE LOADER")
     return {
         type : actionConstants.HIDE_LOADER,
     }

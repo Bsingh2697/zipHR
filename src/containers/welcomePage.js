@@ -10,9 +10,7 @@ const welcomePage = (props) => {
     const dispatch = useDispatch()
 
     useEffect(()=>{
-        dispatch(fetchPosts(0,10,respose=>{
-            console.log(respose)
-        }))
+        
     },[])
 
     return (
