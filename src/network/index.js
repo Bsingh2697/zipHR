@@ -37,6 +37,7 @@ defaultInstance.interceptors.response.use(
     }
 )
 
+// Request API handles the request with the props received.
 const requestAPI = (
 dispatch,
 url,
@@ -72,6 +73,7 @@ exceptionCallBack,
         return ex
     })
 }
+
 
 export const fetchPosts = (
     start,

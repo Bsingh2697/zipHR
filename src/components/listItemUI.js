@@ -1,3 +1,4 @@
+//  This component is rendering item details received as props from flatlist
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { globalStyles } from './../utils/globalStyles';

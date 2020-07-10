@@ -1,3 +1,4 @@
+// This component renders the posts flatlist 
 import React, { useEffect, useState } from 'react'
 import { View, Text, TouchableOpacity, FlatList, ActivityIndicator, StyleSheet } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux';
@@ -29,7 +30,7 @@ const listView = () => {
     },[])
 
     const fetchData = () => {
-        
+        // Fetching posts 
         dispatch(fetchPosts(startEnd.start,startEnd.end,response=>{
             if(Object.keys(posts).length == Object.keys(response.data).length)
             {   

@@ -1,0 +1,37 @@
+Assignment
+Configuration:
+    "react-native": "0.62.2",
+    "react": "16.11.0",
+    "react-navigation": "^4.4.0",
+    "redux": "^4.0.5",
+
+Phases :
+    1. Understood the need
+    2. Gathered requirements 
+    3. Created the project structure and started implementing basic project needs 
+    4. Added main login and worked on edge cases
+    5. Unit Testing
+    6. Resolved issues and UI improvements 
+    7. Final Testing
+
+Brief :
+    General :
+        In this project I have uses jsonplaceholder's posts api for fetching data.
+        User can see posts, as the user moves down new posts are added until reached end.
+        User can pull from top to fetch new posts.
+        Internet connection is must to fetch posts.
+    
+    Technical : 
+        The application is developed using mordern react. 
+        Functional components along with hooks are used throughout the application.        
+        I have used axios and created its instance for fetching data. 
+        Also used redux and thunk middleware for loading state.
+        Stack navigator is used for navigating to the list page.
+
+How to access :
+    1. Open the application 
+    2. Tap on "Go to list" button and you will be navigated to List page.
+    3. U can access list and scroll up and down. 
+
+
+
