@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { navigationConstants } from './../utils/constants/navigationConstants';
 import welcomePage from '../containers/welcomePage';
 import listView from '../containers/listView';
+import details from './../containers/details';
 
 
 const stackNav = createStackNavigator({
@@ -12,6 +13,9 @@ const stackNav = createStackNavigator({
     },
     [navigationConstants.listView] : {
         screen : listView
+    },
+    [navigationConstants.details] : {
+        screen : details
     }
 },{
     initialRouteName : navigationConstants.welcome,

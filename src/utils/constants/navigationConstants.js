@@ -1,4 +1,5 @@
 export const navigationConstants= {
     welcome : 'welcome',
-    listView : 'listView'
+    listView : 'listView',
+    details : 'details',
 }
