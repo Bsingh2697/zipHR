@@ -6,7 +6,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useDispatch } from 'react-redux';
 import { addToBookmark } from '../redux/action/action';
 
-function listItemUI() {
+function listItemUI(props) {
     const {item}  = props
     const dispatch = useDispatch()
     return (

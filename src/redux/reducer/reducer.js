@@ -1,6 +1,6 @@
 
 import { actionConstants } from './../../utils/constants/actionConstants';
-import  AsyncStorage  from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const initialState = {
     loader : false,
@@ -20,10 +20,11 @@ export const reducer = (state = initialState , action) => {
                 loader : false
             }
         case actionConstants.ADD_BOOKMARK : 
-            AsyncStorage.setItem("bookmarks", JSON.stringify([...state.bookmarks,...action.payload]))
+            console.log("Item Setttttttttttttttttttttttttttttttttttttttttttt")
+            AsyncStorage.setItem("bookmarks", JSON.stringify([...state.bookmarks,action.payload]))
             return {
                 ...state,
-                bookmarks : [...state.bookmarks,...action.payload]
+                bookmarks : [...state.bookmarks||[],action.payload]
             }
         case actionConstants.FETCH_BOOKMARK : 
             //CODE for async Storage
